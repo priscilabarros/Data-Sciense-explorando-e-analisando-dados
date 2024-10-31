@@ -185,6 +185,12 @@ medias_por_filme.describe()
 
 ``` 
 
+* Desenhar a curva das medias das colunas:
+``` 
+sns.displot(medias_por_filme, kde=True)
+
+``` 
+
 ## *Biblioteca matematica:*
 
 * Matplotlib - é uma biblioteca de baixo nível matemática utilizada pelo pandas/seaborn. Costuma-se importar essa biblioteca como plt
@@ -193,6 +199,12 @@ medias_por_filme.describe()
 ``` 
 import matplotlib.pyplot as plt
 ``` 
+
+* Definir um título para o histograma:
+``` 
+plt.title("Histograma das médias dos filmes.")
+``` 
+OBS: a ordem é importante, deixe o titulo antesde plotar
 
 * histograma da matplotlib
 ``` 
@@ -228,6 +240,18 @@ sns.displot(medias_por_filme, bins=10)
 ``` 
 
 ## *Separando Categorias:*
+
+* adicionando as informações do arquivo csv em uma variavel aux chamada tmdb:
+``` 
+tmdb = pd.read_csv("https://raw.githubusercontent.com/alura-cursos/data-science-analise-exploratoria/main/Aula_0/tmdb_5000_movies.csv")
+tmdb.head()
+``` 
+
+* plotando essainfo com o seaborn:
+``` 
+plt.title("Distribuição da receita dos filmes ")
+sns.displot(tmdb["revenue"])
+``` 
 
 * categoria nominal:
 ``` 
@@ -302,7 +326,19 @@ sns.barplot(x = "original_language", y = "total" , data = contagem_de_lingua )
 
 OBS: para descrever um x e um y é necessário ter um data frame.
 
-Continuar: Aula 02 - iniciar leitura. 01:19
+
+## *Variáveis:*
+
+* O que é uma variável: são caracteristicas, atributos ou quantidades de uma amostra ou população. 
+
+* Como se classificam: 
+- Qualitativa(categorica)- não são medidas numericamente mas podem ser categorizadas.
+    - Nominais: classifica os elementos, não possui grandeza ou ordem de dados.Ex: Nome de produtos, departamentos, cidades.
+    - Ordinais: classifica os elementos, porém existe uma ordem natural, ou hierarquica.EX:grau de escolaridade, nivel de satisfação.
+
+- Quantitativa(numerica) - representam quantidades numericas ou quantidades observaveis que podem ser expressa em numeros.
+    - Discretas: apresenta valores que podem ser contados e geralmente inteiros.EX: quantidade de produto, numero de comodos,idade.
+    - Contínuas: apresenta valores que podem assumir qualquer valor dentro de um intervalo especifico, geralmente numeros reais. EX: peso de um produto, altura deuma pessoa, tempo, temperatura. 
 
 
 
